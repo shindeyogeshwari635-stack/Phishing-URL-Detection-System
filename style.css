@@ -1,0 +1,288 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #65063a; /* Dark purple-blue background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-top: 90px;   /* Push content below navbar */
+}
+
+.tags {
+    position: fixed;              /* Fix at top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    background: #2b0035;          /* Dark navbar color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    z-index: 1000;
+}    
+
+.tag {
+    color: #eef0ef;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    padding-bottom: 12px;
+    transition: 0.3s;
+}
+
+.tag.active {
+    color: #04a10c;                 /* Green text */
+    border-bottom: 3px solid #49e049;
+}
+
+.tag:hover {
+    color: #b6500d;
+    border-bottom: 2px solid #c46a4f;
+}
+
+
+.container {
+    background: #c7aa1bf6; /* Dark navy container */
+    padding: 50px;
+    border-radius: 12px;
+    width: 500px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}
+nav {
+    margin-bottom: 15px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #138f1a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a.active {
+    color: #eeeded;
+    border-bottom: 3px solid #f8f9f4;
+    padding-bottom: 4px;
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #e0e0ff; /* Light text for title */
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #555;
+    margin-bottom: 15px;
+    background: #000004; /* Dark input background */
+    color: rgb(255, 253, 253);
+}
+
+input::placeholder {
+    color: #888; /* Lighter placeholder */
+}
+button {
+    width: 100%;
+    padding: 12px;
+    background: #026c59;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+
+/* Dashboard fixed height container */
+.dashboard-container {
+    width: 420px;
+    height: 500px;      /* Increased height */
+    padding: 20px;          /* Remove top padding only */
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.history {
+    margin-top: 20px;
+    background: #0b0000;
+    padding: 30px;
+    border-radius: 8px;
+
+    height: 200px;         /* FIXED small height */
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.history h2 {
+    margin-bottom: 8px;
+    font-size: 18px;          /* Smaller title */
+    color: #e0e0ff;
+}
+
+.dashboard-history ul {
+    background: #1e1b2c;      /* Scrollable area background */
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;          /* Scroll enabled */
+}
+
+.dashboard-history {
+    background: #4e014e;
+    padding: 8px;     /* Reduced padding */
+    border-radius: 10px;
+
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.history ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    border-bottom: 2px solid #d5045b;
+    padding-bottom: 5px;
+}
+
+.clear-btn {
+    margin-top: 10px;
+    background: #c63b09;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background: #c90a0a;
+}
+
+.stats {
+    margin-top: 20px;
+    background: #01626b;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.stats h2 {
+    margin-bottom: 10px;
+    color: #e0e0ff;
+}
+
+.stat-box {
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.stat-box.safe {
+    background: rgba(30, 141, 3, 0.973);
+    color: #eaf0ea;
+}
+
+.stat-box.phishing {
+    background: rgba(105, 2, 2, 0.797);
+    color: #f5f1f1;
+}
+
+.stat-box.total {
+    background: rgba(221, 105, 15, 0.911);
+    color: #f3f7f8;
+}
+
+
+button:hover {
+    background: #3570c0; /* Darker blue on hover */
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Safe / phishing overall colors */
+.safe {
+    color: #047e1c; /* Green for safe URLs */
+}
+
+.phishing {
+    color: #820606; /* Red for phishing URLs */
+}
+
+/* Category color coding */
+.result ul {
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.result ul li {
+    margin-bottom: 6px;
+    font-weight: normal;
+}
+
+/* Color codes for each category */
+.email { color: #facc15; }       /* Yellow - email indicators */
+.url { color: #3b82f6; }         /* Blue - URL issues */
+.brand { color: #f97316; }       /* Orange - brand impersonation */
+.scam { color: #ef4444; }        /* Red - suspicious words */
+.other { color: #db2777; }       /* Pink - other tricks */
+
+.risk-score {
+    margin-top: 0;
+    background: #0f0f1e;
+    padding: 6px;
+    border-radius: 8px;
+    
+}
+
+.risk-score h2 {
+    margin-bottom: 10px;
+    color: #e0e0ff;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 14px;
+    background: #615858;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+#riskFill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 10px;
+}
+
+#riskText {
+    margin-top: 8px;
+    font-weight: bold;
+    
+}
